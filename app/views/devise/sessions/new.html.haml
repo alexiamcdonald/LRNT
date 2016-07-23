@@ -1,0 +1,19 @@
+.container.login-wrapper
+  .login-img
+    %img{:src => "/images/logo-large.png"}/
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .input-group
+      %span#basic-addon1.input-group-addon
+        %span.glyphicon.glyphicon-envelope
+      = f.email_field :email, autofocus: true, class: 'form-control'
+    .input-group
+      %span#basic-addon1.input-group-addon
+        %span.glyphicon.glyphicon-lock
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
+    - if devise_mapping.rememberable?
+      .field.input-group
+        = f.check_box :remember_me
+        = f.label :remember_me
+    .actions
+      = f.submit "Log in", class: 'btn btn-default'
+  = render "devise/shared/links"

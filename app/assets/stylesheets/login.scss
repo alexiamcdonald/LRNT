@@ -4,7 +4,18 @@
 
 .login-img {
 	width: 100%;
-	height: 500px;
+	height: 50vh;
 	background-image: url('/images/signup.jpg');
 	background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+	img {
+
+	}
+}
+
+.input-group {
+	margin: 25px 0;
 }
