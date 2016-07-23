@@ -17,6 +17,9 @@
 #
 
 class Setting < ActiveRecord::Base
+
+  mount_uploader :picture, PictureUploader
+  
   has_many :skills
   belongs_to :users
 end

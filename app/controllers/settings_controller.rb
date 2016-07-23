@@ -18,6 +18,7 @@ class SettingsController < ApplicationController
   def setting_params
     params.require(:setting).permit(
     :user_id,
+    :picture,
     :location_id,
     :bio,
     :learn_one,
