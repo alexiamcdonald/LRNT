@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'matches/view'
 
   resources :profiles
-  root 'settings#view'
+  root 'settings#new'
   resources :settings
   devise_for :users
 
