@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :profiles
-  root 'profiles#index'
-  get 'settings/view'
+  root 'settings#view'
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
