@@ -1,13 +1,20 @@
+# == Schema Information
+#
+# Table name: skills
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  skill      :string
+#  system     :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Skill < ActiveRecord::Base
 
-  scope :list_order, -> { active_first.order('lower(skills.name) ASC') }
-  scope :active_or_ids, -> (ids) do
-    if ids.present?
-      where('skills.active OR skills.id IN (?)', ids)
-    else
-      where(active: true)
-    end
-  end
+  belongs_to :settings
+
+  scope :list_order, -> { order('lower(skills.name) ASC') }
 
   SKILLS = { french: 'French',
              english: 'English',
