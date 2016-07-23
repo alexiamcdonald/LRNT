@@ -18,4 +18,5 @@
 
 class Setting < ActiveRecord::Base
   has_many :skills
+  belongs_to :users
 end
