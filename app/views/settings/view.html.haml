@@ -1,20 +1,23 @@
-%form{:action => ""}
-  .dropdown
-    %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-      I want to learn
-      %span.caret
-    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
-      - @topics_learn.each do |topic|
-        %li
-          = topic
-  .dropdown
-    %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-      I want to teach
-      %span.caret
-    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu2"}
-      - @topics_teach.each do |topic|
-        %li
-          = topic
-  %div
-    %label My bio
-    %textarea{:cols => "50", :name => "textarea", :rows => "10"}
+.row
+  .col-md-1
+    %form{:action => ""}
+      %h1 Settings
+      .dropdown.form-input
+        %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+          I want to learn
+          %span.caret
+        %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+          - @topics_learn.each do |topic|
+            %li
+              = topic
+      .dropdown.form-input
+        %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+          I want to teach
+          %span.caret
+        %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu2"}
+          - @topics_teach.each do |topic|
+            %li
+              = topic
+      .bio
+        %label My bio
+        %textarea.form-control{:name => "textarea", :rows => "3"}
