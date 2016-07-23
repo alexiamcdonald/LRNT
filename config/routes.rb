@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'matches/view'
+
   resources :profiles
   root 'settings#view'
   resources :settings
