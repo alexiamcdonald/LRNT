@@ -8,6 +8,7 @@ class SettingsController < ApplicationController
     @setting = Setting.new(setting_params) do |o|
       o.user_id = current_user.id
     end
+    @setting.save!
   end
 
   def show
