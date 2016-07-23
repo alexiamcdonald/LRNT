@@ -24,7 +24,7 @@ class Location < ActiveRecord::Base
            }
 
   validates :area, :country, :name, presence: true
-  validates :area, inclusion: {in: AREAS.keys.map(&:to_s), message: '%{value} is not a supported area'}, :if => :system
+  validates :area, inclusion: {in: AREAS.keys.map(&:to_s), message: '%{value} is not a supported area'}
   validates :area, uniqueness: {case_sensitive: false}
 
   def self.initialize!
