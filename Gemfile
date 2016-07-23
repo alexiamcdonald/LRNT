@@ -28,6 +28,7 @@ gem 'therubyracer'
 gem 'omniauth-digitalocean'
 gem 'haml'
 gem 'simple_form'
+gem 'carrierwave'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
