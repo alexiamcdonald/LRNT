@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: settings
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  location_id :integer
+#  bio         :text
+#  learn_one   :integer
+#  learn_two   :integer
+#  learn_three :integer
+#  teach_one   :integer
+#  teach_two   :integer
+#  teach_three :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  location_id: 1
+  bio: MyText
+  learn_one: 1
+  learn_two: 1
+  learn_three: 1
+  teach_one: 1
+  teach_two_integer: MyString
+  teach_three: 1
+
+two:
+  user_id: 1
+  location_id: 1
+  bio: MyText
+  learn_one: 1
+  learn_two: 1
+  learn_three: 1
+  teach_one: 1
+  teach_two_integer: MyString
+  teach_three: 1
