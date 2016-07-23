@@ -7,6 +7,8 @@
           .step-pane.active
             = simple_form_for @setting, :html => {'data-parsley-validate' => '', class: 'form-horizontal', multipart: true}  do |f|
               .row
+                %h3
+                  = current_user.try(:first_name)
                 .form-group
                   = f.label :learn, class: 'col-sm-2 control-label', label: 'I want to Learn'
                 .form-group
