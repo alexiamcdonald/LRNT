@@ -1,6 +1,14 @@
 class SettingsController < ApplicationController
-  def view
-  	@topics_learn = %w(French English Spanish German Mandarin Japanese)
-  	@topics_teach = %w(French English Spanish German Mandarin Japanese)
+  def new
+    @setting = Setting.new
+  end
+
+  def create
+    @setting = Setting.new(setting_params) do |o|
+      o.user_id = current_user.id
+    end
+  end
+
+  def show
   end
 end
