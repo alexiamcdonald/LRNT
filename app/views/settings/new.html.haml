@@ -32,6 +32,12 @@
                     = f.select(:teach_three, model_options(Skill, @setting.teach_three), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
 
                 .form-group
+                  = f.label :location, class: 'col-sm-2 control-label', label: 'Location'
+                .form-group
+                  .col
+                    = f.select(:location_id, model_options(Location, @setting.location_id), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+
+                .form-group
                   = f.label :bio, class: 'col-sm-2 control-label', label: 'Bio'
                 .form-group
                   .col
