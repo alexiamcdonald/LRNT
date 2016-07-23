@@ -11,13 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723064527) do
+ActiveRecord::Schema.define(version: 20160723074059) do
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "area"
+    t.string   "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.string   "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.text     "bio"
+    t.integer  "learn_one"
+    t.integer  "learn_two"
+    t.integer  "learn_three"
+    t.integer  "teach_one"
+    t.integer  "teach_two"
+    t.integer  "teach_three"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "skills", force: :cascade do |t|
