@@ -2,36 +2,31 @@
 
 	<div class="dropdown">
 	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-	    Select
+	    I want to learn
 	    <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	    <li> <%= topic %>  </li>
-
+	  	<% @topics_learn.each do |topic| %>
+	    	<li> <%= topic %> </li>
+	    <% end %>
 	  </ul>
 	</div>
 
-	<p>
-		<label for="learn">I want to learn</label>
-		<select name="learn">
-			<% @topics_learn.each do |topic| %>
-				<option value="<% topic %>"> <%= topic %> </option>
-			<% end %>
-		</select>
-	</p>
+	<div class="dropdown">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    I want to teach
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+	  	<% @topics_teach.each do |topic| %>
+	    	<li> <%= topic %> </li>
+	    <% end %>
+	  </ul>
+	</div>
 
-	<p>
-		<label for="learn">I want to teach</label>
-		<select name="teach">
-			<% @topics_teach.each do |topic| %>
-				<option value="<% topic %>"> <%= topic %> </option>
-			<% end %>
-		</select>
-	</p>
-
-	<p>
+	<div>
 		<label>My bio</label>
 		<textarea name="textarea" rows="10" cols="50"></textarea>
-	</p>
+	</div>
 
 </form>
