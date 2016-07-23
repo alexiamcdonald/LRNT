@@ -1,7 +1,8 @@
-.wrapper.form
-  .row
+.container
+  .form
     .nested_form_group
-      %h1 Settings
+      .icon-wrapper
+        %img{:src => "/images/logo-black.svg"}/
       .panel
         .step-content
           .step-pane.active
@@ -21,27 +22,39 @@
                 .form-group
                   .col
                     = f.select(:learn_three, model_options(Skill, @setting.learn_three), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                %img.icon-learn{:src => "/images/learn.svg"}/
+                = f.label :learn, class: 'col-sm-2 control-label', label: 'I want to Learn'
+              .form-group
+                .col
+                  = f.select(:learn_one, model_options(Skill, @setting.learn_one), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                .col
+                  = f.select(:learn_two, model_options(Skill, @setting.learn_two), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                .col
+                  = f.select(:learn_three, model_options(Skill, @setting.learn_three), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
 
-                .form-group
-                  = f.label :teach, class: 'col-sm-2 control-label', label: 'I want to Teach'
-                .form-group
-                  .col
-                    = f.select(:teach_one, model_options(Skill, @setting.teach_one), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
-                .form-group
-                  .col
-                    = f.select(:teach_two, model_options(Skill, @setting.teach_two), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
-                .form-group
-                  .col
-                    = f.select(:teach_three, model_options(Skill, @setting.teach_three), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                = f.label :teach, class: 'col-sm-2 control-label', label: 'I want to Teach'
+              .form-group
+                .col
+                  = f.select(:teach_one, model_options(Skill, @setting.teach_one), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                .col
+                  = f.select(:teach_two, model_options(Skill, @setting.teach_two), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                .col
+                  = f.select(:teach_three, model_options(Skill, @setting.teach_three), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
 
-                .form-group
-                  = f.label :location, class: 'col-sm-2 control-label', label: 'Location'
-                .form-group
-                  .col
-                    = f.select(:location_id, model_options(Location, @setting.location_id), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
+              .form-group
+                = f.label :location, class: 'col-sm-2 control-label', label: 'Location'
+              .form-group
+                .col
+                  = f.select(:location_id, model_options(Location, @setting.location_id), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
 
-                .form-group
-                  = f.label :bio, class: 'col-sm-2 control-label', label: 'Bio'
-                .form-group
-                  .col
-                    = f.text_area :bio, rows:5, class: 'form-control', placeholder: 'Insert info here'
+              .form-group
+                = f.label :bio, class: 'col-sm-2 control-label', label: 'Bio'
+              .form-group
+                .col
+                  = f.text_area :bio, rows:5, class: 'form-control', placeholder: 'Insert info here'
