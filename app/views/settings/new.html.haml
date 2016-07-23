@@ -8,12 +8,10 @@
         .step-content
           .step-pane.active
             = simple_form_for @setting, :html => {'data-parsley-validate' => '', class: 'form-horizontal', multipart: true}  do |f|
-                %p
-                  = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
               .form-group
                 = current_user.try(:first_name)
                 = f.file_field :picture, class: 'btn btn-default form-control'
-
+                = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
               .form-group
                 %img.icon-learn{:src => "/images/learn.svg"}/
                 = f.label :learn, class: 'control-label', label: 'I want to Learn'
