@@ -10,18 +10,9 @@
               .row
                 %h3
                   = current_user.try(:first_name)
+                %p
+                  = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
                   = f.file_field :picture
-                .form-group
-                  = f.label :learn, class: 'col-sm-2 control-label', label: 'I want to Learn'
-                .form-group
-                  .col
-                    = f.select(:learn_one, model_options(Skill, @setting.learn_one), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
-                .form-group
-                  .col
-                    = f.select(:learn_two, model_options(Skill, @setting.learn_two), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
-                .form-group
-                  .col
-                    = f.select(:learn_three, model_options(Skill, @setting.learn_three), {include_blank: 'Select Type'}, { class: 'form-control', style: 'width:100%' })
               .form-group
                 %img.icon-learn{:src => "/images/learn.svg"}/
                 = f.label :learn, class: 'col-sm-2 control-label', label: 'I want to Learn'
@@ -58,3 +49,6 @@
               .form-group
                 .col
                   = f.text_area :bio, rows:5, class: 'form-control', placeholder: 'Insert info here'
+
+              .form-group
+                = f.submit 'I\'m Ready!', class: 'btn btn-primary btn-next'
