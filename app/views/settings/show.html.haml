@@ -11,7 +11,7 @@
       .icon-skills
         %img.icon-learn{:src => "/images/learn.svg"}/
       %p
-        %span.glyphicon.glyphicon-ok
+        %span.glyphicon.glyphicon-triangle-right
         = Skill.find(@setting.learn_one).try(:skill)
       %p
         %span.glyphicon.glyphicon-remove
@@ -33,3 +33,10 @@
         = Skill.find(@setting.teach_three).try(:skill)
   .bio
     = @setting.bio
+  .button-wrapper
+    %span.left.btn.btn-default
+      %a{:href => "#"} Skip
+    %span.btn.btn-default
+      %a{:href => "#"} Match me!
+    %span.right.btn.btn-default
+      %a{:href => "#"} Connect

@@ -1,4 +1,4 @@
-.container
+.container.settings-wrapper
   .form
     .nested_form_group
       %header
@@ -8,7 +8,11 @@
         .step-pane.active
           = simple_form_for @setting, :html => {'data-parsley-validate' => '', class: 'form-horizontal', multipart: true}  do |f|
             .form-group
-              = current_user.try(:first_name)
+              %h1
+                = current_user.try(:first_name)
+              %img.icon-profile{:src => "/images/settings.svg"}/
+              %p.bold
+                Upload a profile picture
               = f.file_field :picture, class: 'btn btn-default form-control'
               = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
             .form-group

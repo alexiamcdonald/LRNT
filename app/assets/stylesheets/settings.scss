@@ -1,6 +1,21 @@
 // Place all the styles related to the Settings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.settings-wrapper {
+	h1 {
+		text-align: center;
+	}
+
+	.icon-profile {
+		height: 80px;
+		width: 80px;
+	}
+}
+
+.bold {
+	font-weight: 800;
+}
+
 .settings {
 	width: 500px;
 	margin: 0 auto;
@@ -63,4 +78,20 @@
 	p {
 		font-size: 1.3em;
 	}
+}
+
+.button-wrapper {
+	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+a {
+	text-decoration:  none;
 }
