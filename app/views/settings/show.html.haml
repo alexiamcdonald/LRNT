@@ -35,8 +35,8 @@
     = @setting.bio
   .button-wrapper
     %span.left.btn.btn-default
-      %a{:href => "#"} Skip
-    %span.btn.btn-default
-      %a{:href => "#"} Match me!
-    %span.right.btn.btn-default
-      %a{:href => "#"} Connect
+      = link_to setting_path(@setting.id, id: 7), class: 'pull-right btn', title: 'Skip' do
+        Skip
+  %span.right.btn.btn-default
+    = link_to setting_path(@setting.id, id: 8), class: 'pull-right btn', title: 'Connect' do
+      Connect
