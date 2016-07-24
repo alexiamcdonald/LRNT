@@ -10,8 +10,15 @@ class SettingsController < ApplicationController
     @setting = Setting.new(setting_params) do |o|
       o.user_id = current_user.id
     end
-    @setting.save!
-    redirect_to setting_path(@setting.id), notice: "Profile created"
+    respond_to do |format|
+      if @setting.save
+        format.html { redirect_to @setting, notice: 'Profile was successfully created.' }
+        format.json { render :show, status: :created, location: @profile }
+      else
+        format.html { render :new }
+        format.json { render json: @setting.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def show
