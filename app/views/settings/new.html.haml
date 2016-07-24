@@ -4,53 +4,52 @@
       %header
         .icon-wrapper
           %img{:src => "/images/logo-black.svg"}/
-      .panel
-        .step-content
-          .step-pane.active
-            = simple_form_for @setting, :html => {'data-parsley-validate' => '', class: 'form-horizontal', multipart: true}  do |f|
-              .form-group
-                = current_user.try(:first_name)
-                = f.file_field :picture, class: 'btn btn-default form-control'
-                = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
-              .form-group
-                %img.icon-learn{:src => "/images/learn.svg"}/
-                = f.label :learn, class: 'control-label', label: 'I want to Learn'
-              .form-group
-                .col
-                  = f.select(:learn_one, model_options(Skill, @setting.learn_one), {include_blank: 'e.g. French'}, { class: 'form-control' })
-              .form-group
-                .col
-                  = f.select(:learn_two, model_options(Skill, @setting.learn_two), {include_blank: 'e.g. Guitar'}, { class: 'form-control' })
-              .form-group
-                .col
-                  = f.select(:learn_three, model_options(Skill, @setting.learn_three), {include_blank: 'e.g. Project Management'}, { class: 'form-control' })
+      .step-content
+        .step-pane.active
+          = simple_form_for @setting, :html => {'data-parsley-validate' => '', class: 'form-horizontal', multipart: true}  do |f|
+            .form-group
+              = current_user.try(:first_name)
+              = f.file_field :picture, class: 'btn btn-default form-control'
+              = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
+            .form-group
+              %img.icon-learn{:src => "/images/learn.svg"}/
+              = f.label :learn, class: 'control-label', label: 'I want to Learn'
+            .form-group
+              .col
+                = f.select(:learn_one, model_options(Skill, @setting.learn_one), {include_blank: 'e.g. French'}, { class: 'form-control' })
+            .form-group
+              .col
+                = f.select(:learn_two, model_options(Skill, @setting.learn_two), {include_blank: 'e.g. Guitar'}, { class: 'form-control' })
+            .form-group
+              .col
+                = f.select(:learn_three, model_options(Skill, @setting.learn_three), {include_blank: 'e.g. Project Management'}, { class: 'form-control' })
 
-              .form-group
-                %img.icon-learn{:src => "/images/teach.svg"}/
-                = f.label :teach, class: 'control-label', label: 'I want to Teach'
-              .form-group
-                .col
-                  = f.select(:teach_one, model_options(Skill, @setting.teach_one), {include_blank: 'e.g. Running'}, { class: 'form-control' })
-              .form-group
-                .col
-                  = f.select(:teach_two, model_options(Skill, @setting.teach_two), {include_blank: 'e.g. Cooking'}, { class: 'form-control' })
-              .form-group
-                .col
-                  = f.select(:teach_three, model_options(Skill, @setting.teach_three), {include_blank: 'e.g. Swimming'}, { class: 'form-control' })
+            .form-group
+              %img.icon-learn{:src => "/images/teach.svg"}/
+              = f.label :teach, class: 'control-label', label: 'I want to Teach'
+            .form-group
+              .col
+                = f.select(:teach_one, model_options(Skill, @setting.teach_one), {include_blank: 'e.g. Running'}, { class: 'form-control' })
+            .form-group
+              .col
+                = f.select(:teach_two, model_options(Skill, @setting.teach_two), {include_blank: 'e.g. Cooking'}, { class: 'form-control' })
+            .form-group
+              .col
+                = f.select(:teach_three, model_options(Skill, @setting.teach_three), {include_blank: 'e.g. Swimming'}, { class: 'form-control' })
 
-              .form-group
-                %img.icon-learn{:src => "/images/location.svg"}/
-                = f.label :location, class: 'control-label', label: 'I am based in'
-              .form-group
-                .col
-                  = f.select(:location_id, model_options(Location, @setting.location_id), {include_blank: 'Select Type'}, { class: 'form-control' })
+            .form-group
+              %img.icon-learn{:src => "/images/location.svg"}/
+              = f.label :location, class: 'control-label', label: 'I am based in'
+            .form-group
+              .col
+                = f.select(:location_id, model_options(Location, @setting.location_id), {include_blank: 'Select Type'}, { class: 'form-control' })
 
-              .form-group
-                %img.icon-learn{:src => "/images/bio.svg"}/
-                = f.label :bio, class: 'control-label', label: 'Bio'
-              .form-group
-                .col
-                  = f.text_area :bio, rows:5, class: 'form-control', placeholder: 'Insert info here'
+            .form-group
+              %img.icon-learn{:src => "/images/bio.svg"}/
+              = f.label :bio, class: 'control-label', label: 'Bio'
+            .form-group
+              .col
+                = f.text_area :bio, rows:5, class: 'form-control', placeholder: 'Tell us more about yourself'
 
-              .form-group
-                = f.submit 'I\'m Ready!', class: 'btn btn-primary btn-next'
+            .form-group
+              = f.submit 'I\'m Ready!', class: 'btn btn-default'
