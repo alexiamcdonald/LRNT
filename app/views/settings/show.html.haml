@@ -1,1 +1,16 @@
-= @setting.learn
+.panel
+  .step-content
+    .step-pane.active
+      .form-group.row
+        .col-sm-5.col-xs-12
+          %b
+            = current_user.try(:first_name)
+            = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
+            = Location.find(@setting.location_id).try(:name)
+            = Skill.find(@setting.learn_one).try(:skill)
+            = Skill.find(@setting.learn_two).try(:skill)
+            = Skill.find(@setting.learn_three).try(:skill)
+            = Skill.find(@setting.teach_one).try(:skill)
+            = Skill.find(@setting.teach_two).try(:skill)
+            = Skill.find(@setting.teach_three).try(:skill)
+            = @setting.bio
