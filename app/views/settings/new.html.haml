@@ -10,8 +10,8 @@
             .form-group
               %h1
                 = current_user.try(:first_name)
-              %img.icon-profile{:src => "/images/settings.svg"}/
-              %p.bold
+              %img.icon-profile{:src => "/images/settings1.svg"}/
+              %p.bold.display-inline
                 Upload a profile picture
               = f.file_field :picture, class: 'btn btn-default form-control'
               = image_tag(@setting.picture_url, :width => 600) if @setting.picture.present?
@@ -56,4 +56,4 @@
                 = f.text_area :bio, rows:5, class: 'form-control', placeholder: 'Tell us more about yourself'
 
             .form-group
-              = f.submit 'I\'m Ready!', class: 'btn btn-default'
+              = f.submit 'Match me!', class: 'btn btn-default full-width'
