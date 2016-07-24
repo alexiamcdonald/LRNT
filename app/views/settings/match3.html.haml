@@ -1,0 +1,35 @@
+.container.profile-wrapper
+  .profile-img
+    = image_tag(@setting.picture_url, :width => 600, class: 'img-circle profile') if @setting.picture.present?
+  .profile-info
+    %h2
+      = current_user.try(:first_name)
+    %h3
+      = Location.find(@setting.location_id).try(:name)
+  .row.skill-wrapper
+    .skills.col-xs-6
+      .icon-skills
+        %img.icon-learn{:src => "/images/learn.svg"}/
+      %p
+        %span.glyphicon.glyphicon-ok
+        = Skill.find(@setting.learn_one).try(:skill)
+      %p
+        %span.glyphicon.glyphicon-ok
+        = Skill.find(@setting.learn_two).try(:skill)
+      %p
+        %span.glyphicon.glyphicon-remove
+        = Skill.find(@setting.learn_three).try(:skill)
+    .skills.col-xs-6
+      .icon-skills
+        %img.icon-learn{:src => "/images/teach.svg"}/
+      %p
+        %span.glyphicon.glyphicon-remove
+        = Skill.find(@setting.teach_one).try(:skill)
+      %p
+        %span.glyphicon.glyphicon-remove
+        = Skill.find(@setting.teach_two).try(:skill)
+      %p
+        %span.glyphicon.glyphicon-remove
+        = Skill.find(@setting.teach_three).try(:skill)
+  .bio
+    = @setting.bio
