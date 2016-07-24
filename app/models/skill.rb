@@ -16,12 +16,12 @@ class Skill < ActiveRecord::Base
 
   scope :list_order, -> { order('lower(skills.name) ASC') }
 
-  SKILLS = { french: 'French',
-             english: 'English',
-             spanish: 'Spanish',
-             german: 'German',
-             mandarin: 'Mandarin',
-             japanese: 'Japanese'
+  SKILLS = { photoshop: 'Photoshop',
+             footnotes: 'Footnotes',
+             economics: 'Economics',
+             physics: 'Physics',
+             management: 'Project Management',
+             programming: 'Programming'
            }
 
   validates :skill, :name, presence: true
