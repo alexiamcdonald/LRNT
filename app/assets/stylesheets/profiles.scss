@@ -1,6 +1,15 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.profile-info {
+	margin: 1em 0;
+
+	.glyphicon {
+		font-size: 2em;
+		padding: 0.5em 0;
+	}
+}
+
 .panel {
 	margin-top: 5em;
 }
