@@ -4,13 +4,17 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .input-group
+      %span#basic-addon1.input-group-addon
+        %span.glyphicon.glyphicon-user
       = f.text_field :first_name, autofocus: true, placeholder: 'First Name', class: 'form-control', required: true
     .input-group
+      %span#basic-addon1.input-group-addon
+        %span.glyphicon.glyphicon-user
       = f.text_field :last_name, autofocus: true, placeholder: 'Last Name', class: 'form-control', required: true
     .input-group
       %span#basic-addon1.input-group-addon
         %span.glyphicon.glyphicon-envelope
-      = f.email_field :email, autofocus: true, class: 'form-control'
+      = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
     .input-group
       %span#basic-addon1.input-group-addon
         %span.glyphicon.glyphicon-lock
@@ -18,7 +22,7 @@
     .input-group
       %span#basic-addon1.input-group-addon
         %span.glyphicon.glyphicon-lock
-      = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: "confirm password"
+      = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: "Confirm password"
     .actions
       = f.submit "Sign up", class: 'btn btn-default'
   = render "devise/shared/links"
