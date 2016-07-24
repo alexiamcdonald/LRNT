@@ -24,3 +24,43 @@
 .form-input {
 	margin: 25px;
 }
+
+.profile-img {
+	display: inline;
+
+	.profile {
+		height: 200px;
+		width: 200px;
+	}
+}
+
+.profile-info {
+	h2, h3 {
+		display: inline;
+	}
+
+	h3 {
+		font-size: 1.3em;
+	}
+}
+
+.bio {
+	border-radius: 10px;
+	border: 1px solid black;
+	margin: 2em 0;
+	padding: 1em;
+}
+
+.profile-wrapper {
+	text-align: center;
+}
+
+.icon-skills {
+	margin: 2em 0;
+}
+
+.skills {
+	p {
+		font-size: 1.3em;
+	}
+}

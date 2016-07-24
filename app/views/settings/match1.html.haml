@@ -11,10 +11,10 @@
       .icon-skills
         %img.icon-learn{:src => "/images/learn.svg"}/
       %p
-        %span.glyphicon.glyphicon-ok
+        %span.glyphicon.glyphicon-remove
         = Skill.find(@setting.learn_one).try(:skill)
       %p
-        %span.glyphicon.glyphicon-remove
+        %span.glyphicon.glyphicon-ok
         = Skill.find(@setting.learn_two).try(:skill)
       %p
         %span.glyphicon.glyphicon-remove
@@ -26,7 +26,7 @@
         %span.glyphicon.glyphicon-ok
         = Skill.find(@setting.teach_one).try(:skill)
       %p
-        %span.glyphicon.glyphicon-ok
+        %span.glyphicon.glyphicon-remove
         = Skill.find(@setting.teach_two).try(:skill)
       %p
         %span.glyphicon.glyphicon-remove
