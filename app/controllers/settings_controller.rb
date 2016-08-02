@@ -13,7 +13,7 @@ class SettingsController < ApplicationController
     respond_to do |format|
       if @setting.save
         format.html { redirect_to @setting, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
+        format.json { render :show, status: :created, location: @setting }
       else
         format.html { render :new }
         format.json { render json: @setting.errors, status: :unprocessable_entity }
@@ -22,6 +22,9 @@ class SettingsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   private

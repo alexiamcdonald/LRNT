@@ -2,10 +2,14 @@
   .profile-img
     = image_tag(@setting.picture_url, :width => 600, class: 'img-circle profile') if @setting.picture.present?
   .profile-info
-    %h2
-      = current_user.try(:first_name)
-    %h3
-      = Location.find(@setting.location_id).try(:name)
+    %div
+      %span.glyphicon.glyphicon-user
+      %h2
+        = User.find(@setting.user_id).try(:first_name)
+    %div
+      %span.glyphicon.glyphicon-map-marker
+      %h3
+        = Location.find(@setting.location_id).try(:name)
   .row.skill-wrapper
     .skills.col-xs-6
       .icon-skills
@@ -35,8 +39,8 @@
     = @setting.bio
   .button-wrapper
     %span.left.btn.btn-default
-      = link_to setting_path(@setting.id, id: 7), class: 'pull-right btn', title: 'Skip' do
+      = link_to("/settings/12", :id => 12, class: 'pull-right btn', title: 'Skip') do
         Skip
   %span.right.btn.btn-default
-    = link_to setting_path(@setting.id, id: 8), class: 'pull-right btn', title: 'Connect' do
+    = link_to("/settings/13", :id => 13, class: 'pull-right btn', title: 'Connect') do
       Connect

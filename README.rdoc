@@ -1,28 +1,15 @@
-== README
+== LRNT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![slide_1](images/slide_1.png)
 
-Things you may want to cover:
+![slide_2](images/slide_2.png)
 
-* Ruby version
+![slide_3](images/slide_3.png)
 
-* System dependencies
+![slide_4](images/slide_4.png)
 
-* Configuration
+![slide_5](images/slide_5.png)
 
-* Database creation
+![slide_6](images/slide_6.png)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![slide_7](images/slide_7.png)
